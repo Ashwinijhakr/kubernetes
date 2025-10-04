@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-service1
+  labels:
+    svc: dev
+spec:
+  ports:
+  - port: 9898
+    targetPort: 8080
+    name: http-80
+  # - port: 9899
+  #   targetPort: 3000
+  #   name: https-3000
+  # - port: 9896
+  #   targetPort: 8080
+  #   name: http-8080
+  # - port: 9897
+  #   targetPort: 8084
+  #   name: http-8084
+  #   nodePort: 30007
+  selector:
+    env: dev
+  type: LoadBalancer
+
+ 

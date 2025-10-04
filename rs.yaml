@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: todo-replica
+spec:
+  replicas: 6
+  selector:
+    matchLabels:
+      env: dev
+  template:
+    metadata:
+      name: todo-replica
+      labels:
+        env: dev
+    spec:
+      containers:
+      - name: todo
+        image: sonambewafaa/hellotondu:latest
+        ports:
+          - containerPort: 8080 
+   

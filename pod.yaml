@@ -1,0 +1,47 @@
+apiVersion: v1
+kind : Pod
+metadata:
+  name: multipod-container
+  labels:
+    env: dev
+spec:
+  containers:
+  - name: multipod-container1
+    image: nginx 
+    ports:
+    - containerPort: 80
+  # - name: multipod-container12
+  #   image: linuxserver/firefox
+  #   ports:
+  #   - containerPort: 3000
+  
+---
+apiVersion: v1
+kind : Pod
+metadata:
+  name: node1
+  labels:
+    env: dev
+spec:
+  containers:
+  - name: node1-container1
+    image: sonambewafaa/hellotondu:latest
+    ports:
+    - containerPort: 8080  
+
+---
+apiVersion: v1
+kind : Pod
+metadata: 
+  name: node2
+  labels:
+    env: dev  
+spec:
+  containers:
+  - name: node2-container1
+    image: sonambewafaa/hellorondu
+    ports:
+    - containerPort: 8084
+  
+---
+

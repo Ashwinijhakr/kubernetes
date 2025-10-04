@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-app
+spec:
+  replicas: 6
+  selector:
+    matchLabels:
+      env: dev
+  template:
+    metadata:
+      name: my-app-pod
+      labels:
+        env: dev
+    spec:
+      containers:
+      - name: my-container
+        image: devopsinsiders/netflix-clone
+        ports:
+          - containerPort: 8080
+      # strategy:
+      #   type: RollingUpdate    

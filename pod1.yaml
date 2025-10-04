@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-app-pod-hello
+  labels:
+    env: dev
+spec:
+  containers:
+  - image: sonambewafaa/hellotondu
+    name: my-containers12
+    ports:
+    - containerPort: 8080
+
+
+  
+  
+    
+     
+  
